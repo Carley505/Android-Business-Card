@@ -2,7 +2,6 @@ package com.example.businesscard
 
 
 import android.os.Bundle
-import android.widget.Filter
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -26,7 +25,6 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -55,6 +53,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+/*====== MERGE TOP-SECTION WITH BOTTOM-SECTION ======*/
 @Composable
 fun BusinessCardApp() {
     Column(Modifier.fillMaxWidth().background(Color(0xFFd5f7cb))) {
@@ -71,6 +71,7 @@ fun BusinessCardApp() {
     }
 }
 
+/*======= DISPLAY LOGO AND TEXT INTRO =======*/
 @Composable
 fun TopSection(
     name: String, position: String,
@@ -102,6 +103,7 @@ fun TopSection(
     }
 }
 
+/*====== CONTACT INFORMATION ========*/
 @Composable
 fun BottomSection() {
     Column(
@@ -124,6 +126,7 @@ fun BottomSection() {
     }
 }
 
+/*======== SINGLE ITEM INFO IN CONTACT SECTION =========*/
 @Composable
 fun BottomItem(icon: Painter, content: String, modifier: Modifier = Modifier) {
     Row(
